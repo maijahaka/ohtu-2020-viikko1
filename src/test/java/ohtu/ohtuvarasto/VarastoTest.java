@@ -89,7 +89,7 @@ public class VarastoTest {
     public void liianLisaaminenSaaVarastonTayteen() {
         varasto.lisaaVarastoon(12);
 
-        assertEquals(12, varasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
     }
 
     @Test
