@@ -1,3 +1,4 @@
+package main;
 import ohtu.ohtuvarasto.Varasto;
 
 public class Main {

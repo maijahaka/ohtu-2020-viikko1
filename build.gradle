@@ -29,12 +29,12 @@ dependencies {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'Main'
+        attributes 'Main-Class': 'main.Main'
     }
 }
 
 // Define the main class for the application
-mainClassName = 'Main'
+mainClassName = 'main.Main'
 
 apply plugin: "jacoco" 
 
@@ -46,7 +46,7 @@ jacocoTestReport {
     afterEvaluate {
         classDirectories.setFrom(files(classDirectories.files.collect {
             fileTree(dir: it,
-                    exclude: ['main/Main'])
+                    exclude: ['main/**'])
         }))
     }
 }
