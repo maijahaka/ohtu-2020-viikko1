@@ -6,4 +6,6 @@
 
 [![codecov](https://codecov.io/gh/maijahaka/ohtu-2020-viikko1/branch/master/graph/badge.svg)](https://codecov.io/gh/maijahaka/ohtu-2020-viikko1)
 
+https://github.com/maijahaka/ohtu-tehtavat
+
 
