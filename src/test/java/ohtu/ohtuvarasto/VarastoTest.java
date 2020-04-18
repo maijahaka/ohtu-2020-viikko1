@@ -26,28 +26,8 @@ public class VarastoTest {
     }
 
     @Test
-    public void kuormitetunKonstruktorinLuomallaVarastollaOikeaSaldo() {
-        Varasto kuormitettuVarasto = new Varasto(10,4);
-
-        assertEquals(4, kuormitettuVarasto.getSaldo(), vertailuTarkkuus);
-    }
-
-    @Test
-    public void liianSuuriAlkusaldoTayttaaVaraston() {
-        Varasto kuormitettuVarasto = new Varasto(10,12);
-
-        assertEquals(10, kuormitettuVarasto.getSaldo(), vertailuTarkkuus);        
-    }
-
-    @Test
     public void uudellaVarastollaOikeaTilavuus() {
         assertEquals(10, varasto.getTilavuus(), vertailuTarkkuus);
-    }
-
-    public void kuormitetullaUudellaVarastollaOikeaTilavuus() {
-        Varasto kuormitettuVarasto = new Varasto(10,4);
-
-        assertEquals(10, kuormitettuVarasto.getTilavuus(), vertailuTarkkuus);
     }
 
     @Test
@@ -83,69 +63,6 @@ public class VarastoTest {
 
         // varastossa pitäisi olla tilaa 10 - 8 + 2 eli 4
         assertEquals(4, varasto.paljonkoMahtuu(), vertailuTarkkuus);
-    }
-
-    @Test
-    public void liianLisaaminenSaaVarastonTayteen() {
-        varasto.lisaaVarastoon(12);
-
-        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
-    }
-
-    @Test
-    public void liianOttaminenTyhjentaaVaraston() {
-        varasto.lisaaVarastoon(5);
-        varasto.otaVarastosta(6);
-
-        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
-    }
-
-    @Test
-    public void liianOttaminenPalauttaaSaldon() {
-        varasto.lisaaVarastoon(5);
-
-        assertEquals(5, varasto.otaVarastosta(6), vertailuTarkkuus);
-    }
-
-    @Test
-    public void negatiivisenMaaranLisaysEiMuutaMitaan() {
-        varasto.lisaaVarastoon(-5);
-
-        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
-    }
-
-    @Test
-    public void negatiivisenMaaranOttoPalauttaaNollan() {
-
-        assertEquals(0, varasto.otaVarastosta(-5), vertailuTarkkuus);
-    }
-
-    @Test
-    public void toStringToimiOikein() {
-        varasto.lisaaVarastoon(4);
-
-        assertEquals("saldo = 4.0, vielä tilaa 6.0", varasto.toString());
-    }
-
-    @Test
-    public void negatiivinenTilavuusLuoVarastonJonkaTilavuusOnNolla() {
-        Varasto epakelpoVarasto = new Varasto(-10);
-
-        assertEquals(0, epakelpoVarasto.getTilavuus(), vertailuTarkkuus);
-    }
-
-    @Test
-    public void negatiivinenTilavuusLuoKuormitetunVarastonJonkaTilavuusOnNolla() {
-        Varasto epakelpoKuormitettuVarasto = new Varasto (-10,6);
-
-        assertEquals(0, epakelpoKuormitettuVarasto.getTilavuus(), vertailuTarkkuus);
-    }
-
-    @Test
-    public void negatiivinenAlkusaldoLuoKuormitetunVarastonJonkaSaldoOnNolla() {
-        Varasto epakelpoKuormitettuVarasto = new Varasto(10,-6);
-
-        assertEquals(0, epakelpoKuormitettuVarasto.getSaldo(), vertailuTarkkuus);
     }
 
 }
